@@ -1,0 +1,44 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<h1>Cadastro</h1>
+<form action="login" method="get">
+
+  <div class="item">
+    <label for="userName">
+      Nome de Usuário:
+    </label>
+    <input type="text" name="userName" id="userName">
+  </div>
+
+  <div class="item">
+    <label for="password">
+      Cadastrar senha:
+    </label>
+    <input type="password" name="password" id="password">
+  </div>
+
+  <div class="item">
+    <label for="email">
+      E-mail:
+    </label>
+    <input type="text" name="email" id="email">
+  </div>
+
+  <div class="item">
+    <label for="userName">
+      Nome de Usuário:
+    </label>
+    <input type="text" name="userName" id="userName">
+  </div>
+
+  <div class="item">
+    <label for="userName">
+      Nome de Usuário:
+    </label>
+    <input type="text" name="userName" id="userName">
+  </div>
+  <button type="submit" class="button">Cadastrar</button>
+</form>
+
+{% endblock  %}

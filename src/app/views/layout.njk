@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Lista de Tarefas</title>
 </head>
 <body>
-  
+  {% include 'parts/header.njk' %}
+  {% block content %}
+    
+    <form action="/login" method="get">
+      <h3>Entrar</h3>
+      {%include 'login/enter.njk'%}
+      <button type="submit" class="button">Entrar</button>
+    </form>
+    <h3>Não possue uma conta?</h3>
+    <a href="/login/register" class="button">Cadastrar</a>
+
+  {% endblock  %}
+  {% include 'parts/footer.njk' %}
+
+  <script src="script.js"></script>
 </body>
 </html>
