@@ -1,0 +1,12 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<h1>Cadastro</h1>
+<form action="login" method="get">
+  {% include './fields.njk' %}
+  <button type="submit" class="button">Cadastrar</button>
+</form>
+<h3>Já possue uma conta?</h3>
+<a href="/" class="button">Entrar</a>
+
+{% endblock  %}

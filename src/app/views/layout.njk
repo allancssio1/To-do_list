@@ -12,13 +12,13 @@
   {% include 'parts/header.njk' %}
   {% block content %}
     
+    <h1>Entrar</h1>
     <form action="/login" method="get">
-      <h3>Entrar</h3>
       {%include 'login/enter.njk'%}
       <button type="submit" class="button">Entrar</button>
     </form>
     <h3>Não possue uma conta?</h3>
-    <a href="/login/register" class="button">Cadastrar</a>
+    <a href="/create" class="button">Cadastrar</a>
 
   {% endblock  %}
   {% include 'parts/footer.njk' %}

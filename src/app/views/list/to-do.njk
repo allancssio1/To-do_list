@@ -1,0 +1,12 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<div class="container-todo">
+  <div>
+    {%include './create.njk'%}
+  </div>
+  <div>
+    {%include './show.njk'%}
+  </div>
+</div>
+{% endblock  %}
