@@ -2,10 +2,11 @@
 
 {% block content %}
 <div class="container-todo">
-  <div>
+  <button class="change-display button" onclick="functions.formAdd()">Nova Tarefa:</button>
+  <div class="form">
     {%include './create.njk'%}
   </div>
-  <div>
+  <div class="show">
     {%include './show.njk'%}
   </div>
 </div>

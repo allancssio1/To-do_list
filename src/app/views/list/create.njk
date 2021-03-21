@@ -1,9 +1,9 @@
 <h1>Nova Tarefa</h1>
-<form action="/list" method="post">
+<form action="/todo" method="post">
 <div class="item">
   {# Título está no lugar do requisito de categoria da tarefa, pois não compreendi o que seria esse requisito. #}
   <h3>Título:</h3>
-  <input type="text" name="name_todo">
+  <input type="text" name="title">
 </div>
 <div class="item">
   <h3>Descrição:</h3>
@@ -16,23 +16,39 @@
       type="text"
       name="priority"
       placeholder="Selecione uma prioridade"
-      onFocus="functions.dropdown(0)"
-      onBlur="functions.dropdown(1)" 
+      onFocus="functions.dropDownPriority(0)"
+      onBlur="functions.dropDownPriority(1)" 
     >
-    <div class="drop-down">
+    <div class="drop-down-priority">
       <div class="list_drop-down">
-        <div class="item-priority" id="item-1" onmousedown="functions.priority(1)">Prioridade 1</div>
-        <div class="item-priority" id="item-2" onmousedown="functions.priority(2)">Prioridade 2</div>
-        <div class="item-priority" id="item-3" onmousedown="functions.priority(3)">Prioridade 3</div>
-        <div class="item-priority" id="item-4" onmousedown="functions.priority(4)">Prioridade 4</div>
-        <div class="item-priority" id="item-5" onmousedown="functions.priority(5)">Prioridade 5</div>
+        <div class="item-priority" id="item-priority-1" onmousedown="functions.priority(1)">Prioridade 1</div>
+        <div class="item-priority" id="item-priority-2" onmousedown="functions.priority(2)">Prioridade 2</div>
+        <div class="item-priority" id="item-priority-3" onmousedown="functions.priority(3)">Prioridade 3</div>
+        <div class="item-priority" id="item-priority-4" onmousedown="functions.priority(4)">Prioridade 4</div>
+        <div class="item-priority" id="item-priority-5" onmousedown="functions.priority(5)">Prioridade 5</div>
       </div>
     </div>
   </div>
 </div>
 <div class="item">
-  <h3>Situação</h3>
-  <input type="text">
+  <h3>Nível de Prioridade:</h3>
+  <div class="situation">
+    <input
+      type="text"
+      name="situation"
+      placeholder="Selecione uma prioridade"
+      onFocus="functions.dropDownSituation(0)"
+      onBlur="functions.dropDownSituation(1)" 
+    >
+    <div class="drop-down-situation">
+      <div class="list_drop-down">
+        <div class="item-situation" id="item-situation-1" onmousedown="functions.situation(1)">Pendente</div>
+        <div class="item-situation" id="item-situation-2" onmousedown="functions.situation(2)">Iniciada</div>
+        <div class="item-situation" id="item-situation-3" onmousedown="functions.situation(3)">Concluida</div>
+        <div class="item-situation" id="item-situation-3" onmousedown="functions.situation(4)">Cancelada</div>
+      </div>
+    </div>
+  </div>
 </div>
-<button class="button">Adicionar</button>
+<button class="button" type="submit" onclick="functions.formAdd()">Adicionar</button>
 </form>

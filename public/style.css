@@ -44,11 +44,14 @@ header, footer{
   font-size: 16px;
   text-align: center;
   cursor: pointer;
-  transition: all 200ms;
+  transition: all 1s;
   align-self: center;
 }
 .button:hover{
   background-color: thistle;
+}
+.button:hover:hover{
+  background-color: #fd951f;
 }
 header h1{
   margin: 8px auto;
@@ -56,6 +59,8 @@ header h1{
   padding: 4px;
 }
 .container-todo{
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 500px;
 
@@ -71,6 +76,13 @@ form, div.item{
 div.container-button{
   width: 100%;
 }
+.form{
+  display: none;
+}
+.active{
+  display: block;
+}
+
 form{
   margin: auto;
   font-size: 24px;
@@ -121,39 +133,36 @@ form textarea{
   font-size: 20px; 
 }
 
-.priority{
+.priority, .situation{
   line-height: 24px;
-  width: 100%;
-}
-.priority input{
-  height: 40px;
   width: 100%;
 }
 ::-webkit-input-placeholder,
 input::-moz-placeholder{
   color: #000;
 }
-.drop-down{
+.drop-down-priority{
   width: 100%;
   background-color: rgb(223, 244, 255);
   border-radius: 6px;
   margin-top: 10px;
   border-bottom: 1px solid rgba(29,22,156,1);
-  height: 80px;
-  overflow: auto;
+  height: 150px;
+  overflow: hidden;
   display: none;
 }
-::-webkit-scrollbar{
-  background-color: rgba(29,22,156,1);
-  width: 10px;
+.drop-down-situation{
+  width: 100%;
+  background-color: rgb(223, 244, 255);
   border-radius: 6px;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(29,22,156,1);
+  height: 120px;
+  overflow: hidden;
+  display: none;
 }
-::-webkit-scrollbar-thumb{
-  background-color: rgba(223,244,255,1);
-  border-radius: 6px;
-  height: 40px;
-}
-.item-priority{
+
+.item-priority, .item-situation{
   font-size: 24px;
   font-weight: 700;
   padding: 0px 5px;
@@ -161,10 +170,26 @@ input::-moz-placeholder{
   cursor: pointer;
   margin: 5px 0px
 }
-.item-priority:hover{
+.item-priority:hover, .item-situation:hover{
   background-color: thistle;
   padding-left: 7px;
   transition: 200ms;
+}
+.container-todo h3{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+.container-show .response{
+  font-style: italic;
+  font-style: 16px;
+  color: #464444;
+  font-weight: 500;
+  background-color: rgb(222, 234, 240);
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px;
 }
 
 footer{
