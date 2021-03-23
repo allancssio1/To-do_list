@@ -4,7 +4,8 @@ let priority = document.querySelector('.drop-down-priority'),
   containerPriority = document.querySelector('.item .priority'),
   situation = document.querySelector('.drop-down-situation'),
   containerSituation = document.querySelector('.item .situation'),
-  formDisplay = document.querySelector('.form')
+  formDisplay = document.querySelector('.form'),
+  buttonAddTask = document.querySelector('.change-display')
 
 const functions = {
   dropDownPriority(params) {
@@ -25,5 +26,11 @@ const functions = {
   },
   formAdd() {
     formDisplay.classList.toggle('active')
+    if (buttonAddTask.innerHTML == 'Adicionar Tarefa'){
+      buttonAddTask.innerHTML = 'Cancelar Adicição'    
+    } else {
+      buttonAddTask.innerHTML = 'Adicionar Tarefa'
+    }
+
   }
 }

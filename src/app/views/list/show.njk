@@ -1,25 +1,27 @@
 <h1>Sua lista:</h1>
 
 <form action="/list" method="get">
-<div class="container-show">
-  <div class="item">
-    <h3>Título:</h3>
-    <div class="response">{{task.title}}Criar página</div>
-  </div>
-  <div class="item">
-    <h3>Descrição:</h3>
-    <div class="response">{{task.description}}Fazer todo o designe do layout da página com animações.</div>
-  </div>
-  <div class="item">
-    <h3>Nível de Prioridade:</h3>
-    <div class="priority">
-      <div class="response">{{task.priority}}prioridade 1</div>
+  {% for task in tasks %}
+  <div class="container-show">
+    <div class="item">
+      <h3>Título:</h3>
+      <div class="response">{{task.title}}</div>
+    </div>
+    <div class="item">
+      <h3>Descrição:</h3>
+      <div class="response">{{task.description}}</div>
+    </div>
+    <div class="item">
+      <h3>Nível de Prioridade:</h3>
+      <div class="priority">
+        <div class="response">{{task.priority}}</div>
+      </div>
+    </div>
+    <div class="item">
+      <h3>Situação:</h3>
+      <div class="situation">
+        <div class="response">{{task.situation}}</div>
+      </div>
     </div>
   </div>
-  <div class="item">
-    <h3>Situação:</h3>
-    <div class="situation">
-      <div class="response">{{task.situation}}iniciada</div>
-    </div>
-  </div>
-</div>
+  {% endfor %}

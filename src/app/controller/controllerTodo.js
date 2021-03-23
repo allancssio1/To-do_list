@@ -1,16 +1,24 @@
+const Todos = require('../models/Todo')
+
 module.exports = {
   async create(req, res) {
-    return res.render('list/to-do.njk')
+
+    let result = await Todos.all()
+    const tasks = result.rows
+    return res.render('list/to-do.njk', {tasks})
   },
   async post (req, res) {
     const keys = Object.keys(req.body)
-    const {title, priority, situation} = req.body
 
     for (key of keys) {
-      if((title || priority || situation) == "" ){
-        res.send(`Por favor, preencha o campos.`)
+      if(req.body[key] == "" ){
+        res.send(`Por favor, preencha os campos.`)
       }
     }
-    return res.redirect('/todo')
+    
+    let result = await Todos.create(req.body)
+    result = await Todos.all()
+    const tasks = result.rows
+    return res.render('list/to-do.njk', {tasks})
   }
 }

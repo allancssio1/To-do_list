@@ -132,7 +132,11 @@ form textarea{
   font-weight: 700;
   font-size: 20px; 
 }
-
+.container-show{
+  margin-bottom: 16px;
+  border-bottom: 2px solid rgba(0,24,255,1);
+  padding-bottom: 16px;
+}
 .priority, .situation{
   line-height: 24px;
   width: 100%;
